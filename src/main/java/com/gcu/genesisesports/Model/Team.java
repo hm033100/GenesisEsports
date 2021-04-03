@@ -7,10 +7,14 @@ import org.springframework.lang.NonNull;
 @Document(collection = "Teams")
 public class Team {
 	
-	//_id - String: The ID generated from MongoDB for the Team
+		//_id - String: The ID generated from MongoDB for the Team
 		@Id
 		private String _id;
 		
+		//_id - String: The ID generated from MongoDB for the Team
+		@NonNull
+		private String ownerID;
+
 		//teamName - String: The Team Name
 		@NonNull
 		private String teamName;
@@ -45,7 +49,23 @@ public class Team {
 		public void set_id(String _id) {
 			this._id = _id;
 		}
+		
+		/**
+		 * Get the ID of the team owner
+		 * @return The Team Owner ID
+		 */
+		public String getOwnerID() {
+			return ownerID;
+		}
 
+
+		/**
+		 * Set the ID of the team owner
+		 * @param _id The team owner ID
+		 */
+		public void setOwnerID(String ownerID) {
+			this.ownerID = ownerID;
+		}
 
 
 		/**
@@ -127,9 +147,10 @@ public class Team {
 		 * @param teamWins
 		 * @param teamLosses
 		 */
-		public Team(String _id, String teamName, String clubTag, int teamWins, int teamLosses) {
+		public Team(String _id, String ownerID, String teamName, String clubTag, int teamWins, int teamLosses) {
 			super();
 			this._id = _id;
+			this.ownerID = ownerID;
 			this.teamName = teamName;
 			this.clubTag = clubTag;
 			this.teamWins = teamWins;

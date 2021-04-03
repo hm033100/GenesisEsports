@@ -11,6 +11,8 @@ public class User {
 	@Id
 	private String _id;
 	
+	private String team_id;
+	
 	//firstName - String: The First Name of the User.
 	@NonNull
 	private String firstName;
@@ -189,6 +191,14 @@ public class User {
 		this.game = game;
 		this.username = username;
 		this.password = password;
+	}
+
+	public String getTeam_id() {
+		return team_id;
+	}
+
+	public void setTeam_id(String team_id) {
+		this.team_id = team_id;
 	}
 	
 }
