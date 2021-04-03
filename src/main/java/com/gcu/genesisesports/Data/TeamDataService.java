@@ -7,7 +7,7 @@ import com.gcu.genesisesports.Model.Team;
 
 /**
  * GenesisEsports Backend
- * CST-452 Professor Reha
+ * CST-452 Professor Reh
  * UserDataService
  * @author Hermes Mimini
  * @version 1.0
