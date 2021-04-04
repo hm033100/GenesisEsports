@@ -11,41 +11,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gcu.genesisesports.Business.LeagueService;
-import com.gcu.genesisesports.Model.League;
+import com.gcu.genesisesports.Business.MatchService;
+import com.gcu.genesisesports.Model.Match;
+
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@RequestMapping(value = "/leagues")
-public class LeagueController {
+@RequestMapping(value = "/matches")
+public class MatchController {
 
 	@Autowired
-	private final LeagueService leagueService;
+	private final MatchService matchService;
 	
-	public LeagueController(LeagueService leagueService) {
-		this.leagueService = leagueService;
+	public MatchController(MatchService matchService) {
+		this.matchService = matchService;
 	}
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public List<League> getAll(){
-		return leagueService.findAll();
+	public List<Match> getAll(){
+		return matchService.findAll();
 	}
 	
 	@RequestMapping(value = "/id", method=RequestMethod.POST)
-	public Optional<League> viewById(@RequestBody Map<String, String> json){
+	public Optional<Match> viewById(@RequestBody Map<String, String> json){
 		String _id = json.get("_id");
-		return leagueService.findById(_id);
+		return matchService.findById(_id);
 	}
 	
 	@RequestMapping(value="/save", method=RequestMethod.POST)
-	public League save(@RequestBody League league) {
-		return leagueService.save(league);
+	public Match save(@RequestBody Match match) {
+		return matchService.save(match);
 	}
 	
 	@RequestMapping(value="/delete", method=RequestMethod.POST)
 	public void deleteById(@RequestBody Map<String, String> json) {
 		String _id = json.get("_id");
-		leagueService.deleteById(_id);
+		matchService.deleteById(_id);
 	}
 	
 }

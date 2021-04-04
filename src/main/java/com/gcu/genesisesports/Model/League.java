@@ -20,10 +20,25 @@ public class League {
 	private Boolean isLocked;
 	
 	@NonNull
-	private ArrayList<Match> matches;
+	private Boolean isFinished;
+	
+	@NonNull
+	private ArrayList<String> teamsId;
 
 	public String get_id() {
 		return _id;
+	}
+	
+	public Boolean getIsFinished() {
+		return isFinished;
+	}
+
+	public void setIsFinished(Boolean isFinished) {
+		this.isFinished = isFinished;
+	}
+
+	public void setTeamsId(ArrayList<String> teamsId) {
+		this.teamsId = teamsId;
 	}
 
 	public void set_id(String _id) {
@@ -37,6 +52,10 @@ public class League {
 	public void setLeagueName(String leagueName) {
 		this.leagueName = leagueName;
 	}
+	
+	public ArrayList<String> getTeamsId() {
+		return teamsId;
+	}
 
 	public Boolean getIsLocked() {
 		return isLocked;
@@ -46,20 +65,13 @@ public class League {
 		this.isLocked = isLocked;
 	}
 
-	public ArrayList<Match> getMatches() {
-		return matches;
-	}
-
-	public void setMatches(ArrayList<Match> matches) {
-		this.matches = matches;
-	}
-
-	public League(String _id, String leagueName, Boolean isLocked, ArrayList<Match> matches) {
+	public League(String _id, Boolean isFinished, String leagueName, Boolean isLocked, ArrayList<String> teamsId){
 		super();
 		this._id = _id;
+		this.isFinished = isFinished;
 		this.leagueName = leagueName;
 		this.isLocked = isLocked;
-		this.matches = matches;
+		this.teamsId = teamsId;
 	}
 
 	public League() {

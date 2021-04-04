@@ -1,26 +1,31 @@
 package com.gcu.genesisesports.Model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.mongodb.lang.NonNull;
 
+@Document(collection = "Matches")
 public class Match {
 	
 	//This variable is the ID of the Match 
 	@Id
 	private String _id;
 	
+	@NonNull
+	private League league;
+	
 	//The ID of the first team
 	@NonNull
-	private String firstTeamId;
+	private Team firstTeam;
 	
 	//The ID of the second team
 	@NonNull 
-	private String secondTeamId;
+	private Team secondTeam;
 	
 	//The ID of the winner team
 	@NonNull 
-	private String winnerTeamId; 
+	private Team winnerTeam; 
 	
 	//This integer will determine the priority of the game
 	//The smaller the number the higher the priority
@@ -35,28 +40,36 @@ public class Match {
 		this._id = _id;
 	}
 
-	public String getFirstTeamId() {
-		return firstTeamId;
+	public League getLeague() {
+		return league;
 	}
 
-	public void setFirstTeamId(String firstTeamId) {
-		this.firstTeamId = firstTeamId;
+	public void setLeague(League league) {
+		this.league = league;
 	}
 
-	public String getSecondTeamId() {
-		return secondTeamId;
+	public Team getFirstTeam() {
+		return firstTeam;
 	}
 
-	public void setSecondTeamId(String secondTeamId) {
-		this.secondTeamId = secondTeamId;
+	public void setFirstTeam(Team firstTeam) {
+		this.firstTeam = firstTeam;
 	}
 
-	public String getWinnerTeamId() {
-		return winnerTeamId;
+	public Team getSecondTeam() {
+		return secondTeam;
 	}
 
-	public void setWinnerTeamId(String winnerTeamId) {
-		this.winnerTeamId = winnerTeamId;
+	public void setSecondTeam(Team secondTeam) {
+		this.secondTeam = secondTeam;
+	}
+
+	public Team getWinnerTeam() {
+		return winnerTeam;
+	}
+
+	public void setWinnerTeam(Team winnerTeam) {
+		this.winnerTeam = winnerTeam;
 	}
 
 	public int getGamePriority() {
@@ -67,12 +80,13 @@ public class Match {
 		this.gamePriority = gamePriority;
 	}
 
-	public Match(String _id, String firstTeamId, String secondTeamId, String winnerTeamId, int gamePriority) {
+	public Match(String _id, League league, Team firstTeam, Team secondTeam, Team winnerTeam, int gamePriority) {
 		super();
 		this._id = _id;
-		this.firstTeamId = firstTeamId;
-		this.secondTeamId = secondTeamId;
-		this.winnerTeamId = winnerTeamId;
+		this.league = league;
+		this.firstTeam = firstTeam;
+		this.secondTeam = secondTeam;
+		this.winnerTeam = winnerTeam;
 		this.gamePriority = gamePriority;
 	}
 

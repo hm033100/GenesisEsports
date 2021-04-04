@@ -79,8 +79,9 @@ public class TeamController {
 		 * @param Id The ID of the Team
 		 */
 		@RequestMapping(value="/delete", method=RequestMethod.POST)
-		public void deleteById(@RequestBody String Id){
-			teamService.deleteById(Id);
+		public void deleteById(@RequestBody Map<String, String> json){
+			String _id = json.get("_id");
+			teamService.deleteById(_id);
 		}
 
 }
