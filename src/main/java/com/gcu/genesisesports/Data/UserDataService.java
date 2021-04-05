@@ -15,9 +15,7 @@ import com.gcu.genesisesports.Model.User;
  * {@summary This class will set up the connection to MongoDB which is a NoSQL Database.}
  *
  */
-
 @Repository
-
 public interface UserDataService extends MongoRepository<User, String> {
 	
 	/**

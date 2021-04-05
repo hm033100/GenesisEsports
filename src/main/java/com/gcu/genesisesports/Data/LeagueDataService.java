@@ -16,7 +16,4 @@ import com.gcu.genesisesports.Model.League;
  */
 
 @Repository
-
-public interface LeagueDataService extends MongoRepository<League, String> {
-
-}
+public interface LeagueDataService extends MongoRepository<League, String> {}

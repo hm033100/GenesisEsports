@@ -8,7 +8,16 @@ import org.springframework.stereotype.Service;
 
 import com.gcu.genesisesports.Data.TeamDataService;
 import com.gcu.genesisesports.Model.Team;
-
+/*
+* Genesis Esports Backend
+* CST-452 Professor Reha
+* Team Service (Business Layer)
+* @author Hermes Mimini
+* @version 1.0
+* {@summary Team Service is the business service for the Team model and handles all the 
+* 	logic that connects to the data service.}
+*
+*/
 @Service
 public class TeamService {
 	
