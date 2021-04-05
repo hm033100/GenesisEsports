@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gcu.genesisesports.Business.LeagueService;
 import com.gcu.genesisesports.Model.League;
 
-@CrossOrigin
+@CrossOrigin(origins = "https://master.d2la0zth04pcwu.amplifyapp.com")
 @RestController
 @RequestMapping(value = "/leagues")
 public class LeagueController {

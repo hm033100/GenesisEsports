@@ -24,7 +24,7 @@ import com.gcu.genesisesports.Model.Team;
  *
  */
 
-@CrossOrigin
+@CrossOrigin(origins = "https://master.d2la0zth04pcwu.amplifyapp.com")
 @RestController
 @RequestMapping(value = "/teams")
 public class TeamController {
