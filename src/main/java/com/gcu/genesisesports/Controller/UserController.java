@@ -25,7 +25,7 @@ import com.gcu.genesisesports.Model.User;
  */
 
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/users")
 public class UserController {

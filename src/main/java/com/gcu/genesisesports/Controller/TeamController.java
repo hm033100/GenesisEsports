@@ -24,7 +24,7 @@ import com.gcu.genesisesports.Model.Team;
  *
  */
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/teams")
 public class TeamController {

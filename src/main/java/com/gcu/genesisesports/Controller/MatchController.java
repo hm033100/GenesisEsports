@@ -15,7 +15,7 @@ import com.gcu.genesisesports.Business.MatchService;
 import com.gcu.genesisesports.Model.Match;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/matches")
 public class MatchController {
