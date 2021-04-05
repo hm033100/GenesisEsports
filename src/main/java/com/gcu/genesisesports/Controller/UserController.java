@@ -25,7 +25,7 @@ import com.gcu.genesisesports.Model.User;
  */
 
 
-@CrossOrigin(origins = "https://master.d2la0zth04pcwu.amplifyapp.com")
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/users")
 public class UserController {
